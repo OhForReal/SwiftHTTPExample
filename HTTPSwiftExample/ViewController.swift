@@ -24,7 +24,8 @@ class ViewController: UIViewController, URLSessionDelegate {
     var session = URLSession()
     var floatValue = 1.5
     let operationQueue = OperationQueue()
-
+    @IBOutlet weak var reqLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -54,6 +55,9 @@ class ViewController: UIViewController, URLSessionDelegate {
                 print("Response:\n%@",response)
                 let strData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 NSLog("\n\nData:\n%@",strData!)
+                DispatchQueue.main.async {
+                    self.reqLabel.text = "\(strData)"
+                }
         })
         
         dataTask.resume() // start the task
