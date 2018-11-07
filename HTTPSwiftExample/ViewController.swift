@@ -15,7 +15,7 @@
 //    ifconfig |grep inet   
 // to see what your public facing IP address is, the ip address can be used here
 //let SERVER_URL = "http://erics-macbook-pro.local:8000" // change this for your server name!!!
-let SERVER_URL = "http://10.8.116.92:8000" // change this for your server name!!!
+let SERVER_URL = "http://10.8.115.84:8000" // change this for your server name!!!
 
 import UIKit
 import CoreMotion
@@ -37,6 +37,7 @@ class ViewController: UIViewController, URLSessionDelegate {
     
     var isWaitingForMotionData = false
     
+    @IBOutlet weak var dsSteper: UIStepper!
     @IBOutlet weak var dsidLabel: UILabel!
     @IBOutlet weak var upArrow: UILabel!
     @IBOutlet weak var rightArrow: UILabel!
@@ -450,6 +451,14 @@ class ViewController: UIViewController, URLSessionDelegate {
         }
     }
 
+    @IBAction func changeDS(_ sender: Any) {
+        DispatchQueue.main.async{
+            // update label when set
+            //self.dsidLabel.layer.add(self.animation, forKey: nil)
+            self.dsidLabel.text = "Current DSID: \(Int(self.dsSteper.value))"
+            self.dsid = Int(self.dsSteper.value)
+        }
+    }
 }
 
 
