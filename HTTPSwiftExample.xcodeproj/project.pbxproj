@@ -7,17 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45FE0BD52197E79600D77FE5 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FE0BD42197E79600D77FE5 /* AudioViewController.m */; };
+		45FE0BD82197EA4300D77FE5 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FE0BD62197EA4300D77FE5 /* Novocaine.m */; };
+		45FE0BDB2197EA9C00D77FE5 /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FE0BDA2197EA9B00D77FE5 /* CircularBuffer.m */; };
+		45FE0BE22198B3BB00D77FE5 /* RandomForestAccel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 45FE0BE02198B3BA00D77FE5 /* RandomForestAccel.mlmodel */; };
+		45FE0BE32198B3BB00D77FE5 /* DecisionTreeAccel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 45FE0BE12198B3BA00D77FE5 /* DecisionTreeAccel.mlmodel */; };
+		45FE0BE62198B86E00D77FE5 /* ModelBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FE0BE52198B86E00D77FE5 /* ModelBViewController.m */; };
+		45FE0BE82198C4E100D77FE5 /* GradientBoostingAccel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 45FE0BE72198C4E100D77FE5 /* GradientBoostingAccel.mlmodel */; };
 		B67483DB1ACA2D6800A9970E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67483DA1ACA2D6800A9970E /* AppDelegate.swift */; };
 		B67483DD1ACA2D6800A9970E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67483DC1ACA2D6800A9970E /* ViewController.swift */; };
 		B67483E01ACA2D6800A9970E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67483DE1ACA2D6800A9970E /* Main.storyboard */; };
 		B67483E21ACA2D6800A9970E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67483E11ACA2D6800A9970E /* Images.xcassets */; };
 		B67483E51ACA2D6800A9970E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67483E31ACA2D6800A9970E /* LaunchScreen.xib */; };
-		B68A10681FABAC9700B89471 /* CMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A10671FABAC9700B89471 /* CMLViewController.swift */; };
-		B68A106C1FABB0E100B89471 /* RandomForestAccel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B68A106B1FABB0E100B89471 /* RandomForestAccel.mlmodel */; };
 		B694B01A1FA377E4009A4277 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694B0191FA377E4009A4277 /* RingBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45FE0BD22197E79500D77FE5 /* HTTPSwiftExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTTPSwiftExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		45FE0BD32197E79600D77FE5 /* AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
+		45FE0BD42197E79600D77FE5 /* AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
+		45FE0BD62197EA4300D77FE5 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		45FE0BD72197EA4300D77FE5 /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		45FE0BD92197EA9B00D77FE5 /* CircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
+		45FE0BDA2197EA9B00D77FE5 /* CircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularBuffer.m; sourceTree = "<group>"; };
+		45FE0BE02198B3BA00D77FE5 /* RandomForestAccel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = RandomForestAccel.mlmodel; path = ../../../../../github/ICA5/RandomForestAccel.mlmodel; sourceTree = "<group>"; };
+		45FE0BE12198B3BA00D77FE5 /* DecisionTreeAccel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DecisionTreeAccel.mlmodel; path = ../../../../../github/ICA5/DecisionTreeAccel.mlmodel; sourceTree = "<group>"; };
+		45FE0BE42198B86E00D77FE5 /* ModelBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelBViewController.h; sourceTree = "<group>"; };
+		45FE0BE52198B86E00D77FE5 /* ModelBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelBViewController.m; sourceTree = "<group>"; };
+		45FE0BE72198C4E100D77FE5 /* GradientBoostingAccel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GradientBoostingAccel.mlmodel; sourceTree = "<group>"; };
 		B67483D51ACA2D6800A9970E /* HTTPSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTPSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67483D91ACA2D6800A9970E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67483DA1ACA2D6800A9970E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -27,8 +44,6 @@
 		B67483E41ACA2D6800A9970E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B67483EF1ACA2D6800A9970E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67483F01ACA2D6800A9970E /* HTTPSwiftExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSwiftExampleTests.swift; sourceTree = "<group>"; };
-		B68A10671FABAC9700B89471 /* CMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLViewController.swift; sourceTree = "<group>"; };
-		B68A106B1FABB0E100B89471 /* RandomForestAccel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RandomForestAccel.mlmodel; sourceTree = "<group>"; };
 		B694B0191FA377E4009A4277 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,15 +78,25 @@
 		B67483D71ACA2D6800A9970E /* HTTPSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
-				B68A106B1FABB0E100B89471 /* RandomForestAccel.mlmodel */,
+				45FE0BD92197EA9B00D77FE5 /* CircularBuffer.h */,
+				45FE0BDA2197EA9B00D77FE5 /* CircularBuffer.m */,
+				45FE0BD72197EA4300D77FE5 /* Novocaine.h */,
+				45FE0BD62197EA4300D77FE5 /* Novocaine.m */,
+				45FE0BE12198B3BA00D77FE5 /* DecisionTreeAccel.mlmodel */,
+				45FE0BE02198B3BA00D77FE5 /* RandomForestAccel.mlmodel */,
 				B67483DA1ACA2D6800A9970E /* AppDelegate.swift */,
+				45FE0BE72198C4E100D77FE5 /* GradientBoostingAccel.mlmodel */,
 				B694B0191FA377E4009A4277 /* RingBuffer.swift */,
 				B67483DC1ACA2D6800A9970E /* ViewController.swift */,
-				B68A10671FABAC9700B89471 /* CMLViewController.swift */,
 				B67483DE1ACA2D6800A9970E /* Main.storyboard */,
+				45FE0BD32197E79600D77FE5 /* AudioViewController.h */,
+				45FE0BD42197E79600D77FE5 /* AudioViewController.m */,
+				45FE0BE42198B86E00D77FE5 /* ModelBViewController.h */,
+				45FE0BE52198B86E00D77FE5 /* ModelBViewController.m */,
 				B67483E11ACA2D6800A9970E /* Images.xcassets */,
 				B67483E31ACA2D6800A9970E /* LaunchScreen.xib */,
 				B67483D81ACA2D6800A9970E /* Supporting Files */,
+				45FE0BD22197E79500D77FE5 /* HTTPSwiftExample-Bridging-Header.h */,
 			);
 			path = HTTPSwiftExample;
 			sourceTree = "<group>";
@@ -127,13 +152,13 @@
 		B67483CD1ACA2D6800A9970E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Eric Larson";
 				TargetAttributes = {
 					B67483D41ACA2D6800A9970E = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = F69WJ27LN4;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -173,11 +198,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68A106C1FABB0E100B89471 /* RandomForestAccel.mlmodel in Sources */,
+				45FE0BDB2197EA9C00D77FE5 /* CircularBuffer.m in Sources */,
+				45FE0BE62198B86E00D77FE5 /* ModelBViewController.m in Sources */,
+				45FE0BD52197E79600D77FE5 /* AudioViewController.m in Sources */,
 				B67483DD1ACA2D6800A9970E /* ViewController.swift in Sources */,
-				B68A10681FABAC9700B89471 /* CMLViewController.swift in Sources */,
+				45FE0BE82198C4E100D77FE5 /* GradientBoostingAccel.mlmodel in Sources */,
 				B67483DB1ACA2D6800A9970E /* AppDelegate.swift in Sources */,
+				45FE0BE22198B3BB00D77FE5 /* RandomForestAccel.mlmodel in Sources */,
+				45FE0BE32198B3BB00D77FE5 /* DecisionTreeAccel.mlmodel in Sources */,
 				B694B01A1FA377E4009A4277 /* RingBuffer.swift in Sources */,
+				45FE0BD82197EA4300D77FE5 /* Novocaine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,12 +245,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -230,6 +262,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				COREML_CODEGEN_LANGUAGE = "Objective-C";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -252,6 +285,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -267,12 +301,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -282,6 +318,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				COREML_CODEGEN_LANGUAGE = "Objective-C";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -296,6 +333,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -304,12 +342,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = HTTPSwiftExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SMU.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HTTPSwiftExample/HTTPSwiftExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -318,12 +359,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = HTTPSwiftExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SMU.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HTTPSwiftExample/HTTPSwiftExample-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

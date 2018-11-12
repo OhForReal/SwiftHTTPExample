@@ -18,7 +18,7 @@
 let SERVER_URL = "http://10.8.117.40:8000" // change this for your server name!!!
 
 import UIKit
-import CoreMotion
+
 
 class ViewController: UIViewController, URLSessionDelegate {
     
@@ -30,7 +30,7 @@ class ViewController: UIViewController, URLSessionDelegate {
     
     var ringBuffer = RingBuffer()
     let animation = CATransition()
-    let motion = CMMotionManager()
+
     
     var magValue = 0.1
     var isCalibrating = false
@@ -38,10 +38,6 @@ class ViewController: UIViewController, URLSessionDelegate {
     var isWaitingForMotionData = false
     
     @IBOutlet weak var dsidLabel: UILabel!
-    @IBOutlet weak var upArrow: UILabel!
-    @IBOutlet weak var rightArrow: UILabel!
-    @IBOutlet weak var downArrow: UILabel!
-    @IBOutlet weak var leftArrow: UILabel!
     @IBOutlet weak var largeMotionMagnitude: UIProgressView!
     
     // MARK: Class Properties with Observers
@@ -53,58 +49,7 @@ class ViewController: UIViewController, URLSessionDelegate {
         case left
     }
     
-    var calibrationStage:CalibrationStage = .notCalibrating {
-        didSet{
-            switch calibrationStage {
-            case .up:
-                self.isCalibrating = true
-                DispatchQueue.main.async{
-                    self.setAsCalibrating(self.upArrow)
-                    self.setAsNormal(self.rightArrow)
-                    self.setAsNormal(self.leftArrow)
-                    self.setAsNormal(self.downArrow)
-                }
-                break
-            case .left:
-                self.isCalibrating = true
-                DispatchQueue.main.async{
-                    self.setAsNormal(self.upArrow)
-                    self.setAsNormal(self.rightArrow)
-                    self.setAsCalibrating(self.leftArrow)
-                    self.setAsNormal(self.downArrow)
-                }
-                break
-            case .down:
-                self.isCalibrating = true
-                DispatchQueue.main.async{
-                    self.setAsNormal(self.upArrow)
-                    self.setAsNormal(self.rightArrow)
-                    self.setAsNormal(self.leftArrow)
-                    self.setAsCalibrating(self.downArrow)
-                }
-                break
-                
-            case .right:
-                self.isCalibrating = true
-                DispatchQueue.main.async{
-                    self.setAsNormal(self.upArrow)
-                    self.setAsCalibrating(self.rightArrow)
-                    self.setAsNormal(self.leftArrow)
-                    self.setAsNormal(self.downArrow)
-                }
-                break
-            case .notCalibrating:
-                self.isCalibrating = false
-                DispatchQueue.main.async{
-                    self.setAsNormal(self.upArrow)
-                    self.setAsNormal(self.rightArrow)
-                    self.setAsNormal(self.leftArrow)
-                    self.setAsNormal(self.downArrow)
-                }
-                break
-            }
-        }
-    }
+    
     
     var dsid:Int = 0 {
         didSet{
@@ -113,103 +58,6 @@ class ViewController: UIViewController, URLSessionDelegate {
                 self.dsidLabel.layer.add(self.animation, forKey: nil)
                 self.dsidLabel.text = "Current DSID: \(self.dsid)"
             }
-        }
-    }
-    
-    @IBAction func magnitudeChanged(_ sender: UISlider) {
-        self.magValue = Double(sender.value)
-    }
-    
-    // MARK: Core Motion Updates
-    func startMotionUpdates(){
-        // some internal inconsistency here: we need to ask the device manager for device
-        
-        if self.motion.isDeviceMotionAvailable{
-            self.motion.deviceMotionUpdateInterval = 1.0/200
-            self.motion.startDeviceMotionUpdates(to: motionOperationQueue, withHandler: self.handleMotion )
-        }
-    }
-    
-    func handleMotion(_ motionData:CMDeviceMotion?, error:Error?){
-        if let accel = motionData?.userAcceleration {
-            self.ringBuffer.addNewData(xData: accel.x, yData: accel.y, zData: accel.z)
-            let mag = fabs(accel.x)+fabs(accel.y)+fabs(accel.z)
-            
-            DispatchQueue.main.async{
-                //show magnitude via indicator
-                self.largeMotionMagnitude.progress = Float(mag)/0.2
-            }
-            
-            if mag > self.magValue {
-                // buffer up a bit more data and then notify of occurrence
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: {
-                    self.calibrationOperationQueue.addOperation {
-                        // something large enough happened to warrant
-                        self.largeMotionEventOccurred()
-                    }
-                })
-            }
-        }
-    }
-    
-    
-    //MARK: Calibration procedure
-    func largeMotionEventOccurred(){
-        if(self.isCalibrating){
-            //send a labeled example
-            if(self.calibrationStage != .notCalibrating && self.isWaitingForMotionData)
-            {
-                self.isWaitingForMotionData = false
-                
-                // send data to the server with label
-                sendFeatures(self.ringBuffer.getDataAsVector(),
-                             withLabel: self.calibrationStage)
-                
-                self.nextCalibrationStage()
-            }
-        }
-        else
-        {
-            if(self.isWaitingForMotionData)
-            {
-                self.isWaitingForMotionData = false
-                //predict a label
-                getPrediction(self.ringBuffer.getDataAsVector())
-                // dont predict again for a bit
-                setDelayedWaitingToTrue(2.0)
-                
-            }
-        }
-    }
-    
-    func nextCalibrationStage(){
-        switch self.calibrationStage {
-        case .notCalibrating:
-            //start with up arrow
-            self.calibrationStage = .up
-            setDelayedWaitingToTrue(1.0)
-            break
-        case .up:
-            //go to right arrow
-            self.calibrationStage = .right
-            setDelayedWaitingToTrue(1.0)
-            break
-        case .right:
-            //go to down arrow
-            self.calibrationStage = .down
-            setDelayedWaitingToTrue(1.0)
-            break
-        case .down:
-            //go to left arrow
-            self.calibrationStage = .left
-            setDelayedWaitingToTrue(1.0)
-            break
-            
-        case .left:
-            //end calibration
-            self.calibrationStage = .notCalibrating
-            setDelayedWaitingToTrue(1.0)
-            break
         }
     }
     
@@ -249,44 +97,11 @@ class ViewController: UIViewController, URLSessionDelegate {
         animation.type = kCATransitionFade
         animation.duration = 0.5
         
-        
-        // setup core motion handlers
-        startMotionUpdates()
-        
-        dsid = 2 // set this and it will update UI
-    }
-
-    //MARK: Get New Dataset ID
-    @IBAction func getDataSetId(_ sender: AnyObject) {
-        // create a GET request for a new DSID from server
-        let baseURL = "\(SERVER_URL)/GetNewDatasetId"
-        
-        let getUrl = URL(string: baseURL)
-        let request: URLRequest = URLRequest(url: getUrl!)
-        let dataTask : URLSessionDataTask = self.session.dataTask(with: request,
-            completionHandler:{(data, response, error) in
-                if(error != nil){
-                    print("Response:\n%@",response!)
-                }
-                else{
-                    let jsonDictionary = self.convertDataToDictionary(with: data)
-                    
-                    // This better be an integer
-                    if let dsid = jsonDictionary["dsid"]{
-                        self.dsid = dsid as! Int
-                    }
-                }
-                
-        })
-        
-        dataTask.resume() // start the task
-        
+        dsid = 5 // set this and it will update UI
     }
     
-    //MARK: Calibration
-    @IBAction func startCalibration(_ sender: AnyObject) {
-        self.isWaitingForMotionData = false // dont do anything yet
-        nextCalibrationStage()
+    
+    @IBAction func collectData(_ sender: UIButton) {
         
     }
     
@@ -367,17 +182,11 @@ class ViewController: UIViewController, URLSessionDelegate {
     
     func displayLabelResponse(_ response:String){
         switch response {
-        case "['up']":
-            blinkLabel(upArrow)
+        case "['cat']":
+            //blinkLabel(upArrow)
             break
-        case "['down']":
-            blinkLabel(downArrow)
-            break
-        case "['left']":
-            blinkLabel(leftArrow)
-            break
-        case "['right']":
-            blinkLabel(rightArrow)
+        case "['dog']":
+            //blinkLabel(downArrow)
             break
         default:
             print("Unknown")
